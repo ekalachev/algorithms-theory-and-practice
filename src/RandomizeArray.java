@@ -10,9 +10,13 @@ public class RandomizeArray<Item> {
 
         for (int i = 0; i < n; i++) {
             int j = rand.nextInt(n);
-            Item temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
+            exchange(array, i, j);
         }
+    }
+
+    private void exchange(Item[] array, int i, int j) {
+        Item temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 }
