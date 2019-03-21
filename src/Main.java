@@ -3,6 +3,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        ra();
+    }
+
+    private static void ra() {
+        String[] array = new String[]{"Hi", "Hello", "Greetings", "Good morning", "Good evening"};
+
+        RandomizeArray<String> ra = new RandomizeArray<String>();
+        ra.Randomize(array);
+
+        for (String s : array) {
+            System.out.println(s);
+        }
+    }
+
+    private static void gcd() {
         System.out.println("Hello to the program 'The biggest common divisor'");
 
         Scanner sc = new Scanner(System.in);
