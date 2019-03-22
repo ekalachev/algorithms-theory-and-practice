@@ -3,7 +3,22 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        ra();
+        Scanner sc = new Scanner(System.in);
+
+        raiseToPower(sc);
+    }
+
+    private  static void raiseToPower(Scanner sc){
+        System.out.println("Enter the number and it's power:");
+
+        do {
+            float a = sc.nextFloat();
+            int p = sc.nextInt();
+
+            float result = RaiseToPower.raise(a, p);
+            System.out.println(result);
+        }
+        while (sc.hasNextFloat());
     }
 
     private static void ra() {
