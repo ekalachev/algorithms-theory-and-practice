@@ -15,7 +15,7 @@ public class Main {
             float a = sc.nextFloat();
             int p = sc.nextInt();
 
-            float result = RaiseToPower.raise(a, p);
+            float result = RaiseToPower.raise2(a, p);
             System.out.println(result);
         }
         while (sc.hasNextFloat());
