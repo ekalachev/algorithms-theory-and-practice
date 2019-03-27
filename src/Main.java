@@ -5,10 +5,28 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        raiseToPower(sc);
+        leftRotation(sc);
     }
 
-    private  static void raiseToPower(Scanner sc){
+    private static void leftRotation(Scanner sc) {
+        System.out.println("Enter your left rotation:");
+
+        do {
+            sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+            int[] arr = new int[]{1, 2, 3, 4, 5};
+
+            arr = LeftRotation.rotLeft(arr, sc.nextInt());
+
+            for (int e : arr) {
+                System.out.printf("%s ", e);
+            }
+
+            System.out.println();
+        }
+        while (sc.hasNextInt());
+    }
+
+    private static void raiseToPower(Scanner sc) {
         System.out.println("Enter the number and it's power:");
 
         do {
