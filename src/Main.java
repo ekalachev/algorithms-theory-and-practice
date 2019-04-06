@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -11,7 +10,7 @@ public class Main {
         do {
             sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            List<Integer> arr = FindPrimeNumbers.findPrimeNumbers(sc.nextInt());
+            int[] arr = GreatestCommonDivisor.findAllDivisors(sc.nextInt());
 
             for (int e : arr) {
                 System.out.printf("%s ", e);
