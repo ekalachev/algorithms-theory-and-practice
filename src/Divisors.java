@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Divisirs {
+public class Divisors {
     public static int gcd(int a, int b) {
         while (b != 0) {
             int reminder = a % b;

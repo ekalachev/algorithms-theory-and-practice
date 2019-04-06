@@ -10,7 +10,7 @@ public class Main {
         do {
             sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            int[] arr = Divisirs.findAllDivisors(sc.nextInt());
+            int[] arr = Divisors.findAllDivisors(sc.nextInt());
 
             for (int e : arr) {
                 System.out.printf("%s ", e);
