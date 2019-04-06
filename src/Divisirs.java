@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class GreatestCommonDivisor {
-    public static int GCD(int a, int b) {
+public class Divisirs {
+    public static int gcd(int a, int b) {
         while (b != 0) {
             int reminder = a % b;
             a = b;
@@ -13,7 +13,7 @@ public class GreatestCommonDivisor {
     }
 
     public static int[] findAllDivisors(int n) {
-        List<Integer> divisors = new ArrayList<Integer>();
+        List<Integer> divisors = new ArrayList<>();
 
         for (int i = 1; i <= Math.sqrt(n); i++) {
             if(n%i == 0) {
