@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
@@ -11,9 +12,9 @@ public class Main {
 
         int input = sc.nextInt();
 
-        int[] arr = Fibonacci.getFibonaccList(input);
+        BigInteger[] arr = Fibonacci.getFibonaccList(input);
 
-        for (int num : arr)
+        for (BigInteger num : arr)
             System.out.printf("%d ", num);
     }
 

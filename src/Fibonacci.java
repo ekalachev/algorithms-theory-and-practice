@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Fibonacci {
@@ -26,15 +27,15 @@ public class Fibonacci {
         return s.get(val);
     }
 
-    public static int[] getFibonaccList(int n) {
-        int[] arr = new int[n + 1];
+    public static BigInteger[] getFibonaccList(int n) {
+        BigInteger[] arr = new BigInteger[n + 1];
 
-        arr[0] = 0;
+        arr[0] = new BigInteger("0");
         if(n == 0){
             return arr;
         }
 
-        arr[1] = 1;
+        arr[1] = new BigInteger("1");
         if(n == 1){
             return arr;
         }
@@ -42,7 +43,7 @@ public class Fibonacci {
         int index = 2;
 
         while (index <= n){
-            arr[index] = arr[index - 1] + arr[index - 2];
+            arr[index] = arr[index - 1].add(arr[index - 2]);
             index++;
         }
 
