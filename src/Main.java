@@ -7,17 +7,14 @@ public class Main {
 
         System.out.println("Enter your number:");
 
-        do {
-            sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            int[] arr = Divisors.findAllDivisors(sc.nextInt());
+        int input = sc.nextInt();
 
-            for (int e : arr) {
-                System.out.printf("%s ", e);
-            }
+        int[] arr = Fibonacci.getFibonaccList(input);
 
-            System.out.println();
-        }
-        while (sc.hasNextInt());
+        for (int num : arr)
+            System.out.printf("%d ", num);
     }
+
 }
