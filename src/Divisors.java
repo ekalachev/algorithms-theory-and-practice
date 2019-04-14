@@ -1,13 +1,21 @@
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Divisors {
-    public static int gcd(int a, int b) {
-        while (b != 0) {
-            int reminder = a % b;
-            a = b;
-            b = reminder;
-        }
+    public static BigInteger gcd(BigInteger a, BigInteger b) {
+        if (BigInteger.ZERO.equals(a))
+            return b;
+
+        if (BigInteger.ZERO.equals(b))
+            return a;
+
+        if(a.compareTo(b) > 0)
+            return gcd(a.mod(b), b);
+        
+        if (b.compareTo(a) > 0)
+            return gcd(a, b.mod(a));
 
         return a;
     }
@@ -27,5 +35,19 @@ public class Divisors {
         }
 
         return divisors.stream().mapToInt(x -> x).toArray();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter your number:");
+
+        sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        String[] ab = sc.nextLine().split(" ");
+        BigInteger a = new BigInteger(ab[0]);
+        BigInteger b = new BigInteger(ab[1]);
+
+        System.out.println(Divisors.gcd(a, b));
     }
 }
