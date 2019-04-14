@@ -13,7 +13,7 @@ public class Divisors {
 
         if(a.compareTo(b) > 0)
             return gcd(a.mod(b), b);
-        
+
         if (b.compareTo(a) > 0)
             return gcd(a, b.mod(a));
 
@@ -40,7 +40,7 @@ public class Divisors {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter your number:");
+        System.out.println("Enter your numbers in the format: 100 25");
 
         sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
