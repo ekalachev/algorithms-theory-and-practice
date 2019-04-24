@@ -4,6 +4,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Divisors {
+    public  static BigInteger gcd2(BigInteger a, BigInteger b) {
+        if (a.equals(BigInteger.ZERO) || b.equals(BigInteger.ZERO))
+            return null;
+
+        while (b.compareTo(BigInteger.ZERO) > 0) {
+            a = a.divideAndRemainder(b)[1];
+
+            BigInteger tmp = a;
+            a = b;
+            b = tmp;
+        }
+
+        return a;
+    }
+
     public static BigInteger gcd(BigInteger a, BigInteger b) {
         if (BigInteger.ZERO.equals(a))
             return b;
@@ -48,6 +63,6 @@ public class Divisors {
         BigInteger a = new BigInteger(ab[0]);
         BigInteger b = new BigInteger(ab[1]);
 
-        System.out.println(Divisors.gcd(a, b));
+        System.out.println(Divisors.gcd2(a, b));
     }
 }
