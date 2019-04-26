@@ -9,7 +9,7 @@ public class Divisors {
             return null;
 
         while (b.compareTo(BigInteger.ZERO) > 0) {
-            a = a.divideAndRemainder(b)[1];
+            a = a.mod(b);
 
             BigInteger tmp = a;
             a = b;
@@ -20,10 +20,10 @@ public class Divisors {
     }
 
     public static BigInteger gcd(BigInteger a, BigInteger b) {
-        if (BigInteger.ZERO.equals(a))
+        if (a.equals(BigInteger.ZERO))
             return b;
 
-        if (BigInteger.ZERO.equals(b))
+        if (b.equals(BigInteger.ZERO))
             return a;
 
         if(a.compareTo(b) > 0)
