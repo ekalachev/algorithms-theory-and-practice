@@ -9,22 +9,17 @@ public class BidirectionalLinkedListTest {
     public void addAtEnd() {
         // Given
         BidirectionalLinkedList list = new BidirectionalLinkedList();
+        int expectedVal = 5;
+
+        list.addAtEnd(new Cell(1));
+        list.addAtEnd(new Cell(3));
+        list.addAtEnd(new Cell(expectedVal));
 
         // When
-        int expectedSum = 0;
-        for (int i = 1; i <= 5; i++) {
-            int rand = (int) (Math.random() * 100);
-            list.addAtEnd(new Cell(rand));
-            expectedSum += rand;
-        }
+        int last = list.last();
 
         // Then
-        int actualSum = 0;
-        for (Cell cell : list){
-            actualSum += cell.value;
-        }
-
-        assertEquals(expectedSum, actualSum);
+        assertEquals(expectedVal, last);
     }
 
     @Test

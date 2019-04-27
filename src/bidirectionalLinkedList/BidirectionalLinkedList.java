@@ -1,6 +1,6 @@
 /*
   Algorithms. Theory and practice
-  Chapter 3, Tasks 3
+  Chapter 3, Tasks 3, 4
  */
 package bidirectionalLinkedList;
 
@@ -15,6 +15,7 @@ class BidirectionalLinkedList implements Iterable<Cell> {
         this.bottom = this.top;
     }
 
+    // task 4
     public void addAtEnd(Cell newCell) {
         newCell.previous = this.bottom;
 
@@ -27,6 +28,7 @@ class BidirectionalLinkedList implements Iterable<Cell> {
         this.bottom.next = null;
     }
 
+    // task 3
     public void addAtBegining(Cell newCell) {
         newCell.next = this.top.next;
         this.top.next = newCell;
@@ -38,6 +40,10 @@ class BidirectionalLinkedList implements Iterable<Cell> {
             return this.top.value;
 
         return this.top.next.value;
+    }
+
+    public int last() {
+        return bottom.value;
     }
 
     @Override
