@@ -1,6 +1,6 @@
-package UnidirectionalLinkedList;
+package unidirectionalLinkedList;
 
-public class Cell {
+class Cell {
     public Cell next;
     public int value;
 

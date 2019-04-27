@@ -1,8 +1,8 @@
-/**
- * Algorithms. Theory and practice
- * Chapter 3, Tasks 1, 2
+/*
+  Algorithms. Theory and practice
+  Chapter 3, Tasks 1, 2
  */
-package UnidirectionalLinkedList;
+package unidirectionalLinkedList;
 
 import java.util.Iterator;
 
@@ -46,7 +46,7 @@ public class UnidirectionalLinkedList implements Iterable<Cell> {
     public class CellIterator implements Iterator<Cell>{
         private Cell current;
 
-        public CellIterator(){
+        CellIterator(){
             this.current = top;
         }
 

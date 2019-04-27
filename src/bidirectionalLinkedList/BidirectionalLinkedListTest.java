@@ -1,18 +1,18 @@
-package UnidirectionalLinkedList;
+package bidirectionalLinkedList;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class UnidirectionalLinkedListTest {
+public class BidirectionalLinkedListTest {
     @Test
     public void addAtEnd() {
         // Given
-        UnidirectionalLinkedList list = new UnidirectionalLinkedList();
+        BidirectionalLinkedList list = new BidirectionalLinkedList();
 
         // When
         int expectedSum = 0;
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 5; i++) {
             int rand = (int) (Math.random() * 100);
             list.addAtEnd(new Cell(rand));
             expectedSum += rand;
@@ -21,7 +21,6 @@ public class UnidirectionalLinkedListTest {
         // Then
         int actualSum = 0;
         for (Cell cell : list){
-            System.out.println("Val: " + cell.value);
             actualSum += cell.value;
         }
 
@@ -29,18 +28,18 @@ public class UnidirectionalLinkedListTest {
     }
 
     @Test
-    public void max() {
-        // Given
-        UnidirectionalLinkedList list = new UnidirectionalLinkedList();
+    public void addAtBegining() {
+        BidirectionalLinkedList list = new BidirectionalLinkedList();
+        int expectedValue = 9;
 
         list.addAtEnd(new Cell(5));
-        list.addAtEnd(new Cell(9));
         list.addAtEnd(new Cell(7));
+        list.addAtBegining(new Cell(expectedValue));
 
         // When
-        int max = list.max();
+        int first = list.first();
 
         // Then
-        assertEquals(9, max);
+        assertEquals(expectedValue, first);
     }
 }
