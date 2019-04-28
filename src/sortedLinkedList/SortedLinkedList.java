@@ -5,16 +5,19 @@
 package sortedLinkedList;
 
 import java.util.Iterator;
+import java.util.Random;
 
 public class SortedLinkedList implements Iterable<Cell>  {
     private Cell top;
     private Cell bottom;
+    private int count;
 
     public SortedLinkedList() {
         this.top = new Cell(Integer.MIN_VALUE);
         this.bottom = new Cell(Integer.MAX_VALUE);
         this.top.next = this.bottom;
         this.bottom.previous = this.top;
+        this.count = 0;
     }
 
     // task 8
@@ -25,8 +28,54 @@ public class SortedLinkedList implements Iterable<Cell>  {
             cell = cell.next;
         }
 
-        newCell.next = cell.next;
-        cell.next = newCell;
+        insertCell(cell, newCell);
+
+        this.count++;
+    }
+
+    private void insertCell(Cell afterMe, Cell newCell) {
+        newCell.next = afterMe.next;
+        afterMe.next = newCell;
+
+        newCell.previous = afterMe;
+    }
+
+    // task 9
+    public boolean isSorted() {
+        Cell cell = this.top;
+
+        while (cell.next.next != null) {
+            if (cell.value > cell.next.value)
+                return false;
+
+            cell = cell.next;
+        }
+
+        return true;
+    }
+
+    // for task 9
+    public void shuffleValues() {
+        Cell cell = this.top.next;
+
+        Random rand = new Random();
+
+        while (cell.next != null) {
+            int j = rand.nextInt(this.count);
+
+            Cell cell2 = this.top.next;
+            int index = 0;
+            while (index < j) {
+                cell2 = cell2.next;
+                index++;
+            }
+
+            int tmp = cell.value;
+            cell.value = cell2.value;
+            cell2.value = tmp;
+
+            cell = cell.next;
+        }
     }
 
     @Override
