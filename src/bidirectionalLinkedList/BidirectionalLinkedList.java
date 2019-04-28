@@ -15,24 +15,24 @@ class BidirectionalLinkedList implements Iterable<Cell> {
         this.bottom = this.top;
     }
 
-    // task 4
-    public void addAtEnd(Cell newCell) {
-        newCell.previous = this.bottom;
-
-        if (this.bottom.previous == null) {
-            this.bottom.previous = this.top;
-        }
-
-        this.bottom.next = newCell;
-        this.bottom = this.bottom.next;
-        this.bottom.next = null;
-    }
-
     // task 3
     public void addAtBegining(Cell newCell) {
-        newCell.next = this.top.next;
-        this.top.next = newCell;
-        newCell.previous = this.top;
+        insertCell(this.top, newCell);
+    }
+
+    // task 4
+    public void addAtEnd(Cell newCell) {
+        insertCell(this.bottom, newCell);
+        this.bottom = newCell;
+    }
+
+    // task 5
+    private void insertCell(Cell afterMe, Cell newCell) {
+        newCell.next = afterMe.next;
+        afterMe.next = newCell;
+
+        newCell.next = newCell;
+        newCell.previous = afterMe;
     }
 
     public int first() {
