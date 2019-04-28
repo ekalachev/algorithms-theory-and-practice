@@ -2,7 +2,7 @@ package bidirectionalLinkedList;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class BidirectionalLinkedListTest {
     @Test
@@ -24,6 +24,7 @@ public class BidirectionalLinkedListTest {
 
     @Test
     public void addAtBegining() {
+        // Given
         BidirectionalLinkedList list = new BidirectionalLinkedList();
         int expectedValue = 9;
 
@@ -36,5 +37,24 @@ public class BidirectionalLinkedListTest {
 
         // Then
         assertEquals(expectedValue, first);
+    }
+
+    @Test
+    public void remove() {
+        // Given
+        BidirectionalLinkedList list = new BidirectionalLinkedList();
+        Cell removingCell = new Cell(9);
+
+        list.addAtEnd(new Cell(5));
+        list.addAtEnd(removingCell);
+        list.addAtEnd(new Cell(7));
+
+        // When
+        list.remove(removingCell);
+
+        // Then
+        for (Cell cell : list) {
+            assertNotEquals(cell.value, removingCell.value);
+        }
     }
 }

@@ -31,8 +31,13 @@ class BidirectionalLinkedList implements Iterable<Cell> {
         newCell.next = afterMe.next;
         afterMe.next = newCell;
 
-        newCell.next = newCell;
         newCell.previous = afterMe;
+    }
+
+    // task 6
+    public void remove(Cell removingCell) {
+        removingCell.previous.next = removingCell.next;
+        removingCell.next.previous = removingCell.previous;
     }
 
     public int first() {
