@@ -1,4 +1,4 @@
-package minimumSwaps;
+package hackerrankAlgorithms.minimumSwaps;
 
 public class MinimumSwaps {
     public int minimumSwaps(int[] arr) {

@@ -1,0 +1,12 @@
+#------- Sort --------
+List<Integer> arr = new ArrayList<Integer>();
+
+1) arr.sort(Comparator.comparingInteger(x -> x));
+   arr.sort(Comparator.comparingInteger(x -> x * -1)); // DESC
+
+2) Collections.sort(arr, new Comparator<Integer>() {
+       @Override
+       public int compare(Integer e1, Integer e2) {
+           return Integer.compare(e1, e2);
+       }
+   });

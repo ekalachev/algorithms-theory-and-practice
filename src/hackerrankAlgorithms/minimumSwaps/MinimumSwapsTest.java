@@ -1,4 +1,4 @@
-package minimumSwaps;
+package hackerrankAlgorithms.minimumSwaps;
 
 import org.junit.Test;
 
