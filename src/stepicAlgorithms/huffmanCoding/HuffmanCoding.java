@@ -26,6 +26,8 @@ public class HuffmanCoding {
             Tree t = new Tree(s.getKey(), s.getValue());
 
         }
+        
+        return "";
     }
 
     public static Map<Character, Integer> sortByValue(final Map<Character, Integer> lettersCounts) {
