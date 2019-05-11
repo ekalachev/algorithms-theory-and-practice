@@ -1,21 +1,17 @@
 package stepicAlgorithms.huffmanCoding;
 
-public class Tree {
+public class Node {
     char letter;
     int weight;
 
-    Tree left, right;
+    Node left, right;
 
-    public Tree(char letter, int weight) {
+    public Node(char letter, int weight) {
         this.letter = letter;
         this.weight = weight;
     }
 
     public int getWeight() {
         return this.weight;
-    }
-
-    public void addWeight(int weight) {
-        this.weight += weight;
     }
 }
