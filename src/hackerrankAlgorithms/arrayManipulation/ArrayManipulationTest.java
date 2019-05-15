@@ -14,9 +14,10 @@ public class ArrayManipulationTest {
 	}
 
 	@Test
-	public void given_gaeries_of_ranges_with_sums_When_arrayManipulation_then_returns_max_sum() {
+	public void given_gueries_of_ranges_with_sums_When_arrayManipulation_then_returns_max_sum() {
 		// Given
 		int m = 3;
+		int n = 5;
 		int[][] queries = new int[m][3];
 		queries[0][0] = 1;
 		queries[0][1] = 2;
@@ -33,7 +34,7 @@ public class ArrayManipulationTest {
 		long expectedMax = 200;
 		
 		// When
-		long max = am.arrayManipulation(5, queries);
+		long max = am.arrayManipulation(n, queries);
 		
 		
 		// Then
@@ -41,9 +42,38 @@ public class ArrayManipulationTest {
 	}
 	
 	@Test
-	public void given_gaeries_of_ranges_with_sums_When_arrayManipulation2_then_returns_max_sum() {
+	public void given_gueries2_of_ranges_with_sums_When_arrayManipulation_then_returns_max_sum() {
 		// Given
 		int m = 3;
+		int n = 4;
+		int[][] queries = new int[m][3];
+		queries[0][0] = 2;
+		queries[0][1] = 3;
+		queries[0][2] = 603;
+		
+		queries[1][0] = 1;
+		queries[1][1] = 1;
+		queries[1][2] = 286;
+		
+		queries[2][0] = 4;
+		queries[2][1] = 4;
+		queries[2][2] = 882;
+		
+		long expectedMax = 882;
+		
+		// When
+		long max = am.arrayManipulation(n, queries);
+		
+		
+		// Then
+		assertEquals(expectedMax, max);
+	}
+	
+	@Test
+	public void given_gueries_of_ranges_with_sums_When_arrayManipulation2_then_returns_max_sum() {
+		// Given
+		int m = 3;
+		int n = 5;
 		int[][] queries = new int[m][3];
 		queries[0][0] = 1;
 		queries[0][1] = 2;
@@ -60,7 +90,35 @@ public class ArrayManipulationTest {
 		long expectedMax = 200;
 		
 		// When
-		long max = am.arrayManipulation2(5, queries);
+		long max = am.arrayManipulation2(n, queries);
+		
+		
+		// Then
+		assertEquals(expectedMax, max);
+	}
+	
+	@Test
+	public void given_gueries2_of_ranges_with_sums_When_arrayManipulation2_then_returns_max_sum() {
+		// Given
+		int m = 3;
+		int n = 4;
+		int[][] queries = new int[m][3];
+		queries[0][0] = 2;
+		queries[0][1] = 3;
+		queries[0][2] = 603;
+		
+		queries[1][0] = 1;
+		queries[1][1] = 1;
+		queries[1][2] = 286;
+		
+		queries[2][0] = 4;
+		queries[2][1] = 4;
+		queries[2][2] = 882;
+		
+		long expectedMax = 882;
+		
+		// When
+		long max = am.arrayManipulation2(n, queries);
 		
 		
 		// Then
