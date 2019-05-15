@@ -15,24 +15,6 @@
 			[3,3,3,10,10,7,7,7,0, 0]
 			[3,3,3,10,10,8,8,8,1, 0]
 	The largest value is 10 after all operations are performed.
-	
-	Optimal SOLUTION O(n):
-	Given a range[a, b] and a value 'k' we need to add 'k' to all the numbers whose indices are in the range from [a, b].
-	We can do an O(1) update by adding 'k' to index 'a' and add '-k' to index 'b+1'.
-	Doing this kind of update, the 'i'th number in the array will be prefix sum of array from index 1 to i because we are
-	adding 'k' to the value at index 'a' and subtracting 'k' from the value at index 'b+1' and taking prefix sum will give
-	us the actual value for each index after 'm' operations .
-	So, we can do all 'm' updates in O(m) time. Now we have to check the largest number in the original array.
-	i.e. the index i such that prefix sum attains the maximum value.
-	We can calculate all prefix sums as well as maximum prefix sum in O(n) time which will execute in time.
-	
-	Optimal SOLUTION O(m log m):
-	This can be further optimized to run in O(m log m) time because we have to check the value of prefix sum
-	at only '2 * m' indices. i.e. 'a' and 'b' values of all the updates.
-	We have, in total 'm' queries and each query has a range [a, b] which needs to be updated.
-	So, in total we have '2 * m' indices.
-	For each query, we can insert both 'a', 'k' and 'b + 1', '-k' in an array and sort the array.
-	Now, we have to just take the prefix sum of the array and find the maximum element which will be our answer.
  */
 package hackerrankAlgorithms.arrayManipulation;
 
@@ -44,7 +26,17 @@ import java.util.List;
 import common.Pair;
 
 public class ArrayManipulation {
-	// time complexity: O(n)
+	/*
+	 	Optimal SOLUTION O(n):
+		Given a range[a, b] and a value 'k' we need to add 'k' to all the numbers whose indices are in the range from [a, b].
+		We can do an O(1) update by adding 'k' to index 'a' and add '-k' to index 'b+1'.
+		Doing this kind of update, the 'i'th number in the array will be prefix sum of array from index 1 to i because we are
+		adding 'k' to the value at index 'a' and subtracting 'k' from the value at index 'b+1' and taking prefix sum will give
+		us the actual value for each index after 'm' operations .
+		So, we can do all 'm' updates in O(m) time. Now we have to check the largest number in the original array.
+		i.e. the index i such that prefix sum attains the maximum value.
+		We can calculate all prefix sums as well as maximum prefix sum in O(n) time which will execute in time.
+	 */
 	public long arrayManipulation(int n, int[][] queries) {
 		int m = queries.length;
 		long[] arr = new long[n];
@@ -70,7 +62,15 @@ public class ArrayManipulation {
 		return max;
 	}
 
-	// time complexity O(m log m)
+	/*
+		Optimal SOLUTION O(m log m):
+		This can be further optimized to run in O(m log m) time because we have to check the value of prefix sum
+		at only '2 * m' indices. i.e. 'a' and 'b' values of all the updates.
+		We have, in total 'm' queries and each query has a range [a, b] which needs to be updated.
+		So, in total we have '2 * m' indices.
+		For each query, we can insert both 'a', 'k' and 'b + 1', '-k' in an array and sort the array.
+		Now, we have to just take the prefix sum of the array and find the maximum element which will be our answer.
+	 */
 	public long arrayManipulation2(int n, int[][] queries) {
 		int m = queries.length;
 
