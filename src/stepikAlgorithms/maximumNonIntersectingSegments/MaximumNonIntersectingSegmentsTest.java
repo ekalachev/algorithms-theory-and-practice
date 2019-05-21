@@ -1,4 +1,4 @@
-package stepicAlgorithms.maximumNonIntersectingSegments;
+package stepikAlgorithms.maximumNonIntersectingSegments;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package stepicAlgorithms.huffmanDecoding;
+package stepikAlgorithms.huffmanDecoding;
 
 import static org.junit.Assert.*;
 

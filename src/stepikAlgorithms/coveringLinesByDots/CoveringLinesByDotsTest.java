@@ -1,4 +1,4 @@
-package stepicAlgorithms.coveringLinesByDots;
+package stepikAlgorithms.coveringLinesByDots;
 
 import javafx.scene.shape.Line;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package stepicAlgorithms.maximumNonIntersectingSegments;
+package stepikAlgorithms.maximumNonIntersectingSegments;
 
 import java.awt.*;
 import java.util.ArrayList;

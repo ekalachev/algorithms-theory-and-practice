@@ -1,4 +1,4 @@
-package unidirectionalLinkedList;
+package stepikAlgorithms.unidirectionalLinkedList;
 
 import org.junit.Test;
 

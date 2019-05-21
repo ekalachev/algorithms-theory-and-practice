@@ -1,4 +1,4 @@
-package unidirectionalLinkedList;
+package stepikAlgorithms.unidirectionalLinkedList;
 
 class Cell {
     public Cell next;

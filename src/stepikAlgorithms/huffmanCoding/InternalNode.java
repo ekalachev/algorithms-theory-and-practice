@@ -1,4 +1,4 @@
-package stepicAlgorithms.huffmanCoding;
+package stepikAlgorithms.huffmanCoding;
 
 public class InternalNode extends Node {
 	Node left;

@@ -1,4 +1,4 @@
-package stepicAlgorithms.PriorityQueue;
+package stepikAlgorithms.PriorityQueue;
 
 import static org.junit.Assert.*;
 

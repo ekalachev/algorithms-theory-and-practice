@@ -1,4 +1,4 @@
-package stepicAlgorithms.huffmanCoding;
+package stepikAlgorithms.huffmanCoding;
 
 public class Node implements Comparable<Node> {
     final int sum;

@@ -1,25 +1,25 @@
-package stepicAlgorithms.PriorityQueue;
+package stepikAlgorithms.PriorityQueue;
 
 import java.util.Arrays;
 
-public class MaxPQ {
+public class MinPQ {
 	int capacity;
 	int size;
 	int[] heap;
 
-	public MaxPQ() {
+	public MinPQ() {
 		capacity = 10;
 		size = 0;
 		heap = new int[capacity];
 	}
 
-	public int extractMax() {
-		int max = heap[0];
+	public int extractMin() {
+		int min = heap[0];
 		heap[0] = heap[size - 1];
 		size--;
 		siftDown(0);
 
-		return max;
+		return min;
 	}
 
 	public void insert(int key) {
@@ -35,10 +35,10 @@ public class MaxPQ {
 			int right = rightChild(i);
 			int j = left;
 
-			if (right < size && heap[right] > heap[left])
+			if (right < size && heap[right] < heap[left])
 				j = right;
 
-			if (heap[i] >= heap[j])
+			if (heap[i] <= heap[j])
 				break;
 
 			swap(i, j);
@@ -46,20 +46,8 @@ public class MaxPQ {
 		}
 	}
 
-	private int leftChild(int i) {
-		return 2 * i + 1;
-	}
-
-	private int rightChild(int i) {
-		return 2 * i + 2;
-	}
-
-	private int parent(int i) {
-		return (i - 1) / 2;
-	}
-
 	private void siftUp(int i) {
-		while (heap[i] > heap[parent(i)]) {
+		while (heap[i] < heap[parent(i)]) {
 			swap(i, parent(i));
 			i = parent(i);
 		}
@@ -79,5 +67,17 @@ public class MaxPQ {
 			capacity = capacity / 2;
 			heap = Arrays.copyOf(heap, capacity);
 		}
+	}
+
+	private int leftChild(int i) {
+		return 2 * i + 1;
+	}
+
+	private int rightChild(int i) {
+		return 2 * i + 2;
+	}
+
+	private int parent(int i) {
+		return (i - 1) / 2;
 	}
 }

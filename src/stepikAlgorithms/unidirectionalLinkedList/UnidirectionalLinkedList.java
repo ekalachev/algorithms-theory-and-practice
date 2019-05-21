@@ -2,7 +2,7 @@
   Algorithms. Theory and practice
   Chapter 3, Tasks 1, 2
  */
-package unidirectionalLinkedList;
+package stepikAlgorithms.unidirectionalLinkedList;
 
 import java.util.Iterator;
 
@@ -39,7 +39,7 @@ public class UnidirectionalLinkedList implements Iterable<Cell> {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<Cell> iterator() {
         return new CellIterator();
     }
 
