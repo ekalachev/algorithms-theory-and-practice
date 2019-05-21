@@ -1,17 +1,19 @@
 package stepicAlgorithms.huffmanCoding;
 
-public class Node {
-    char letter;
-    int weight;
-
-    Node left, right;
-
-    public Node(char letter, int weight) {
-        this.letter = letter;
-        this.weight = weight;
+public class Node implements Comparable<Node> {
+    final int sum;
+    String code;
+    
+    public Node(int sum) {
+    	this.sum = sum;
+    }
+    
+    public void buildcode(String code) {
+    	this.code = code;
     }
 
-    public int getWeight() {
-        return this.weight;
-    }
+	@Override
+	public int compareTo(Node o) {
+		return Integer.compare(sum, o.sum);
+	}
 }

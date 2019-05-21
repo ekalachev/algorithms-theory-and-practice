@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Vector;
 
 import common.Pair;
 
@@ -75,7 +76,7 @@ public class ArrayManipulation {
 	public long arrayManipulation2(int n, int[][] queries) {
 		int m = queries.length;
 
-		List<Pair<Integer, Integer>> arr = new ArrayList<>();
+		Vector<Pair<Integer, Integer>> arr = new Vector<>();
 
 		for (int i = 0; i < m; i++) {
 			int from = queries[i][0] - 1;
@@ -83,7 +84,7 @@ public class ArrayManipulation {
 			int num = queries[i][2];
 
 			arr.add(new Pair<Integer, Integer>(from, num));
-			arr.add(new Pair<Integer, Integer>(to, -num));
+			arr.add(new Pair<Integer, Integer>(to + 1, -num));
 		}
 
 		Collections.sort(arr, Comparator.comparing(Pair<Integer, Integer>::getKey));
