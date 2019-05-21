@@ -19,7 +19,6 @@ public class Item implements Comparable<Item>{
 	
 	@Override
 	public String toString() {
-		return String.format("[cost: {0}, weight: {1}", cost, weight);
-		
+		return String.format("[cost: %d, weight: %d]", cost, weight);		
 	}
 }

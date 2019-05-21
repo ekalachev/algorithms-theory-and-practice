@@ -38,4 +38,17 @@ public class GreedyKnapsackTest {
 		// Then
 		assertEquals(expectedCost, cost, 0);
 	}
+	
+	@Test
+	public void test3() {
+		// Given
+		Item item = new Item(10, 4);
+		String expectedStr = "[cost: 10, weight: 4]";
+		
+		// When
+		String actual = item.toString();
+		
+		// Then
+		assertEquals(expectedStr, actual);
+	}
 }
