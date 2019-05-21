@@ -8,7 +8,6 @@
 package stepicAlgorithms.huffmanCoding;
 
 import java.util.*;
-import java.util.Collections;
 
 public class HuffmanCoding {
 	public String encode(String sourceStr) {
