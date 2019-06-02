@@ -1,4 +1,4 @@
-package stepikAlgorithms.sort.mergeSort;
+package stepikAlgorithms.sort.mergeSort.inversionCounter;
 
 import static org.junit.Assert.*;
 

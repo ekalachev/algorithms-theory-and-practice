@@ -1,4 +1,4 @@
-package stepikAlgorithms.sort.mergeSort;
+package stepikAlgorithms.sort.mergeSort.inversionCounter;
 
 public class InversionCounter {
 	public int sort(int[] arr) {
